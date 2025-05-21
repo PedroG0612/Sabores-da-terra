@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Sabores</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<header role="banner">
+  <div id="main-header" class="header-content">
+    <h1 id="logo-title" aria-label="Cyber Sabores - Restaurante Futurista">Sabores da Terra</h1>
+    <nav id="main-nav" role="navigation" aria-label="Menu principal">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#unidades">Unidades</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main role="main">
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Conheça nosso restaurante</h2>
+      <p>Uma experiência gastronômica que celebra os sabores autênticos da culinária brasileira</p>
+    </div>
+  </section>
+
+  <section id="destaques" class="section-container">
+    <h2>Nossos Destaques</h2>
+    <div class="destaques-grid">
+      <div class="destaque-item">
+        <div class="destaque-img" id="prato1"></div>
+        <h3>Moqueca Capixaba</h3>
+        <p>Peixe fresco cozido com azeite de dendê, leite de coco e temperos especiais</p>
+      </div>
+      <div class="destaque-item">
+        <div class="destaque-img" id="prato2"></div>
+        <h3>Feijoada Completa</h3>
+        <p>O tradicional prato brasileiro com todas as delícias que acompanham</p>
+      </div>
+      <div class="destaque-item">
+        <div class="destaque-img" id="prato3"></div>
+        <h3>Picanha na Brasa</h3>
+        <p>Corte nobre assado na brasa com tempero especial da casa</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservas" class="section-container reservas-section">
+    <h2>Faça sua reserva</h2>
+    <div id="form-feedback" aria-live="polite"></div>
+    <form id="booking-form" class="reserva-form" action="#" method="post">
+      <div class="form-group">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" required aria-required="true">
+      </div>
+      
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required 
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+               aria-required="true">
+      </div>
+      
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" required
+               pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}"
+               aria-required="true">
+      </div>
+      
+      <div class="form-group">
+        <label for="data">Data</label>
+        <input type="date" id="data" name="data" required aria-required="true">
+      </div>
+      
+      <div class="form-group">
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" name="hora" required aria-required="true">
+      </div>
+      
+      <div class="form-group">
+        <label for="pessoas">Número de pessoas</label>
+        <select id="pessoas" name="pessoas" required aria-required="true">
+          <option value="">Selecione</option>
+          <option value="1">1 pessoa</option>
+          <option value="2">2 pessoas</option>
+          <option value="3">3 pessoas</option>
+          <option value="4">4 pessoas</option>
+          <option value="5+">5 ou mais pessoas</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="comentarios">Comentários/Requisitos especiais</label>
+        <textarea id="comentarios" name="comentarios" rows="3"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="notificacoes">Deseja receber nossas promoções?</label>
+        <input type="checkbox" id="notificacoes" name="notificacoes">
+      </div>
+      
+      <div class="form-group">
+        <label for="preferencia">Preferência de mesa</label>
+        <div class="radio-group">
+          <input type="radio" id="interna" name="preferencia" value="interna">
+          <label for="interna">Interna</label>
+          <input type="radio" id="varanda" name="preferencia" value="varanda">
+          <label for="varanda">Varanda</label>
+          <input type="radio" id="sem-preferencia" name="preferencia" value="sem">
+          <label for="sem-preferencia">Sem preferência</label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="satisfacao">Satisfação com outros atendimentos: <span id="satisfacao-value">1 </span></label>
+        <input type="range" id="satisfacao" name="satisfacao" min="1" max="10" value="1"
+               oninput="document.getElementById('satisfacao-value').textContent = this.value">
+      </div>
+      
+      <button type="submit" class="btn-reservar" aria-label="Enviar reserva">Reservar Mesa</button>
+
+    </form>
+  </section>
+
+  <section id="unidades" class="section-container">
+    <h2>Nossas Unidades</h2>
+    <div class="unidades-grid">
+      <div class="unidade-item">
+        <h3>São Paulo</h3>
+        <p>Rua Augusta, 123 - Jardins</p>
+        <p>Funcionamento: Ter-Dom, 12h-23h</p>
+      </div>
+      <div class="unidade-item">
+        <h3>Rio de Janeiro</h3>
+        <p>Avenida Atlântica, 456 - Copacabana</p>
+        <p>Funcionamento: Ter-Dom, 12h-23h</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-content">
+    <p>&copy;2025 - Cyber Sabores</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const feedback = document.getElementById('form-feedback');
+    feedback.textContent = 'Reserva enviada com sucesso!';
+    feedback.style.color = 'green';
+    
+    setTimeout(() => {
+      feedback.textContent = '';
+    }, 5000);
+  });
+
+  const interactiveElements = document.querySelectorAll(
+    'a, button, input, select, textarea, [tabindex]'
+  );
+
+  interactiveElements.forEach(el => {
+    el.style.transition = 'all 0.2s ease';
+    
+    el.addEventListener('focus', () => {
+      el.style.outline = '2px solid #a42626';
+      el.style.outlineOffset = '2px';
+    });
+    
+    el.addEventListener('blur', () => {
+      el.style.outline = 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
